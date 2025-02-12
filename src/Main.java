@@ -69,12 +69,23 @@ class OS {
             System.out.println("Program Card Found");
             init();
 
-//            for (int i = 0; i < 100; i++) {
-//                for (int j = 0; j < 4; j++) {
-//                    System.out.print(mainMemory[i][j] + " ");
-//                }
-//                System.out.println(" ");
-//            }
+            int charIndex = 16;
+            for (int i = 0; i < 100; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (charIndex < verifyChar.length) {
+                        mainMemory[i][j] = verifyChar[charIndex];
+                        charIndex++;
+                    }
+                }
+            }
+
+            // print memory
+            for (int i = 0; i < 100; i++) {
+                for (int j = 0; j < 4; j++) {
+                    System.out.print(mainMemory[i][j] + " ");
+                }
+                System.out.println();
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
